@@ -270,3 +270,15 @@ window.view = {
 	}
 }
 window.onload = function() { view.init() }
+
+function disableit(id){
+
+	id.disabled = true;
+
+}
+
+function enableit(id){
+
+	id.disabled = false;
+
+}
