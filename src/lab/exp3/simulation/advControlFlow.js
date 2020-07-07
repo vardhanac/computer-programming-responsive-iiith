@@ -162,21 +162,36 @@ window.view = {
 		document.getElementById('nestedlocalVariableI').innerHTML = ''
     	document.getElementById('nestedlocalVariableJ').innerHTML = ''
 	},
+		invalidInput: function(){
+		return alert("Invalid Input");
+	},
     startBtn: function() {
     	this.getInput()
     	this.clearDivs()
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
 		if (selected_loop === 'for' && inputValue !== '' && !isNaN(model.inp) )
-		{
+		{	
+			if(inputValue <0 || inputValue > 20){
+				this.invalidInput();
+				return;
+			}
 			this.displayLoop('forLoopContent', 'codeContentFor1')
 		}
 		if (selected_loop === 'while' && inputValue !== '' && !isNaN(model.inp))
-		{
+		{	
+			if(inputValue <0 || inputValue > 20){
+				this.invalidInput();
+				return;
+			}
 			this.displayLoop('whileLoopContent', 'codeContentWhile1')
 		}
 		if (selected_loop === 'do-while' && inputValue !== '' && !isNaN(model.inp))
-		{
+		{	
+			if(inputValue <0 || inputValue > 20){
+				this.invalidInput();
+				return;
+			}
 		 	this.displayLoop('dowhileLoopContent', 'codeContentDoWhile1')
 		}
 		this.disableButton('btnStart')
