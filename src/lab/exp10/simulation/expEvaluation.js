@@ -486,6 +486,7 @@ window.view = {
 	},
 	enableElement: function (id) {
 		document.getElementById(id).disabled = false
+		document.getElementById(id).value = 0
 	},
 	changeClass: function (id, className) {
 		document.getElementById(id).className = className
